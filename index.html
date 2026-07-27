@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇵🇹 PT DN News - Últimas Notícias de Portugal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇵🇹</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="flag">🇵🇹</span>
+                <h1>PT DN News</h1>
+            </div>
+            <p class="subtitle">Últimas notícias de Portugal em tempo real</p>
+            <div class="header-actions">
+                <button id="refreshBtn" onclick="fetchAllNews()">
+                    <span class="refresh-icon">🔄</span> Atualizar
+                </button>
+                <span id="lastUpdate" class="last-update">Última atualização: --</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sources Bar -->
+    <div class="sources-bar">
+        <div class="sources-container">
+            <span class="sources-label">📰 Fontes:</span>
+            <div class="source-tags" id="sourceTags">
+                <span class="source-tag active" data-source="all">Todas</span>
+                <span class="source-tag" data-source="dn">📰 Diário de Notícias</span>
+                <span class="source-tag" data-source="publico">📋 Público</span>
+                <span class="source-tag" data-source="expresso">📌 Expresso</span>
+                <span class="source-tag" data-source="sapo">🌐 SAPO</span>
+                <span class="source-tag" data-source="observador">🔍 Observador</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>A carregar notícias...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message hidden">
+            <span>⚠️</span>
+            <p>Erro ao carregar notícias. Por favor, tente novamente.</p>
+        </div>
+
+        <!-- News Grid -->
+        <div id="newsGrid" class="news-grid">
+            <!-- News cards will be inserted here -->
+        </div>
+
+        <!-- No Results -->
+        <div id="noResults" class="no-results hidden">
+            <span>📭</span>
+            <h3>Sem notícias</h3>
+            <p>Não foram encontradas notícias para esta fonte.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>🇵🇹 PT DN News - Agregador de notícias Portuguesas</p>
+            <p class="footer-small">
+                Fontes: Diário de Notícias, Público, Expresso, SAPO, Observador
+            </p>
+            <p class="footer-small">
+                📱 Siga-nos no Telegram: <a href="https://t.me/PT_DN_NewsBot" target="_blank">@PT_DN_NewsBot</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
